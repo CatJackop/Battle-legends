@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Battle Legends</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="startScreen" class="overlay">
+  <div class="card">
+    <div class="eyebrow">SURVIVE • LOOT • WIN</div>
+    <h1>BATTLE <span>LEGENDS</span></h1>
+    <p>A 10-minute battle royale. Find weapons on the ground, gear up, and be the last legend standing.</p>
+    <div class="howto">
+      <div><b>Laptop</b><br>WASD move · Mouse aim · Click shoot · E pick up · R reload · Shift sprint</div>
+      <div><b>Mobile</b><br>Left pad move · Drag right side to aim · FIRE · PICK UP</div>
+    </div>
+    <button id="startBtn">DROP INTO BATTLE</button>
+    <small>Single-player prototype · AI opponents · Runs in your browser</small>
+  </div>
+</div>
+<div id="endScreen" class="overlay hidden">
+  <div class="card">
+    <div class="eyebrow">MATCH COMPLETE</div><h1 id="endTitle">VICTORY</h1>
+    <p id="endText"></p><button id="againBtn">PLAY AGAIN</button>
+  </div>
+</div>
+<canvas id="game"></canvas>
+<div id="hud">
+  <div class="topbar"><div class="brand">⚔ BATTLE <span>LEGENDS</span></div><div class="timer" id="timer">10:00</div><div class="alive" id="alive">LEGENDS: 13</div></div>
+  <div class="stats"><div class="stat"><label>HEALTH</label><div class="bar"><i id="healthBar"></i></div><b id="healthNum">100</b></div><div class="stat"><label>WEAPON</label><b id="weaponName">PISTOL</b><small id="ammo">12 / 48</small></div><div class="stat"><label>ELIMINATIONS</label><b id="kills">0</b></div></div>
+  <div id="notice"></div>
+  <div id="pickupPrompt">E / PICK UP</div>
+  <div id="crosshair">+</div>
+  <div id="mobileControls">
+    <div id="joystick"><div id="stick"></div></div>
+    <div class="rightButtons"><button id="pickupBtn">PICK UP</button><button id="reloadBtn">RELOAD</button><button id="fireBtn">FIRE</button></div>
+  </div>
+  <div class="bottomhint" id="hint">WASD MOVE · CLICK TO SHOOT · E PICK UP · R RELOAD</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
